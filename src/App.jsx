@@ -7,6 +7,8 @@ import Footer from "./components/Footer/Footer";
 import Homepage from "./pages/Homepage";
 import MovieDetails from "./pages/MovieDetails";
 
+import "./App.css";
+
 function App() {
   return (
     <BrowserRouter>
