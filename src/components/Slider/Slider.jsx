@@ -3,9 +3,10 @@ import axios from "axios";
 
 import "./Slider.css";
 
-const [upcomingMovies, setUpcomingMovies] = useState([]);
 
 function Slider() {
+  const [upcomingMovies, setUpcomingMovies] = useState([]);
+
   useEffect(() => {
     axios
       .get(
