@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import StarRatings from "react-star-ratings";
+
+import Genres from "../Genres/Genres";
 
 import "./Slider.css";
 
@@ -61,7 +64,24 @@ function Slider() {
         <p className="slider-description">
           {upcomingMovies[index]?.overview.slice(0, 130)}...
         </p>
+        <Genres
+          genreIds={
+            upcomingMovies[index]?.genre_ids
+              ? upcomingMovies[index]?.genre_ids
+              : []
+          }
+        />
         <p>Release Date: {upcomingMovies[index]?.release_date}</p>
+        {upcomingMovies[index] && (
+          <StarRatings
+            rating={upcomingMovies[index]?.vote_average / 2}
+            starRatedColor="red"
+            numberOfStars={5}
+            name="rating"
+            starDimension="15px"
+            starSpacing="1px"
+          />
+        )}
       </div>
     </div>
   );
