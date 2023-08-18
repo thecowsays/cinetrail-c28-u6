@@ -19,7 +19,6 @@ function Slider() {
         }`
       )
       .then((res) => {
-        // console.log(res?.data?.results);
         setUpcomingMovies(res?.data?.results);
       })
       .catch((err) => console.log(err));
