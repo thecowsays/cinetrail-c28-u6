@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 
+import "./MovieCard.css";
+
 export default function MovieCard({
   movie,
   height,
