@@ -45,6 +45,7 @@ export default function MovieCard({
           <p>Rating: {Math.round(movie?.vote_average / 2)}</p>
         </div>
       </div>
+      {cardStyle === "top-rated-card" ? <p>{movie?.title}</p> : null}
     </Link>
   );
 }
