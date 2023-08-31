@@ -6,24 +6,29 @@ import Footer from "./components/Footer/Footer";
 
 import Homepage from "./pages/Homepage";
 import MovieDetails from "./pages/MovieDetails";
+import ThemeContextProvider from "./contexts/ThemeContext";
 
 import "./App.css";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* surrounds Header and Footer so they will also have access */}
+      <ThemeContextProvider>
+        <Header />
 
-      <Routes>
-        <Route path={"/"} element={<Homepage />} />
-        <Route path={"/movieDetails"} element={<MovieDetails />} />
-        {/* <Route path={"/"} element={<Homepage />} /> */}
-        {/* <Route path={"/"} element={<Homepage />} /> */}
-        {/* <Route path={"/"} element={<Homepage />} /> */}
-        <Route path={"*"} element={<Homepage />} />
-      </Routes>
+        <Routes>
+          <Route path={"/"} element={<Homepage />} />
+          <Route path={"/movieDetails/:movieId"} element={<MovieDetails />} />
+          {/* <Route path={"/"} element={<Homepage />} /> */}
+          {/* <Route path={"/"} element={<Homepage />} /> */}
+          {/* <Route path={"/"} element={<Homepage />} /> */}
+          <Route path={"*"} element={<Homepage />} />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </ThemeContextProvider>
     </BrowserRouter>
   );
 }
